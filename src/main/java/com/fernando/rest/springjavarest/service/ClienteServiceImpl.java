@@ -1,6 +1,7 @@
 package com.fernando.rest.springjavarest.service;
 
 import com.fernando.rest.springjavarest.model.Cliente;
+import com.fernando.rest.springjavarest.model.Region;
 import com.fernando.rest.springjavarest.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,5 +44,10 @@ public class ClienteServiceImpl implements ClienteService{
         Cliente clienteDeleted = clienteRepository.findById(id).get();
         clienteRepository.delete(clienteDeleted);
         return clienteDeleted;
+    }
+
+    @Override
+    public List<Cliente> findAllByRegion(Region region) {
+        return clienteRepository.findAllByRegion(region);
     }
 }

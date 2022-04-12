@@ -1,6 +1,7 @@
 package com.fernando.rest.springjavarest.service;
 
 import com.fernando.rest.springjavarest.model.Cliente;
+import com.fernando.rest.springjavarest.model.Region;
 import com.fernando.rest.springjavarest.repository.ClienteRepository;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface ClienteService {
     List<Cliente> findAll();
     Cliente findById(Long id);
     Cliente deleteById(Long id);
+    List<Cliente> findAllByRegion(Region region);
 }
